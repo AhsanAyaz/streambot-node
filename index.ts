@@ -67,7 +67,7 @@ async function observeMessages(page: Page) {
 
 async function main() {
   const browser = await puppeteer.launch({
-    headless: !!process.env.HEADLESS_MODE, // Set to true in production
+    headless: false, // Set to true in production
   });
 
   const page = await browser.newPage();

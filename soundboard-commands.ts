@@ -12,6 +12,7 @@ type SoundEffect = {
 };
 
 function simulateHotkey({ modifiers, key }: Hotkey) {
+  console.log(`Triggering hotkey: ${modifiers.join("+")}+${key}`);
   modifiers.forEach((m) => robot.keyToggle(m, "down"));
   robot.keyTap(key);
   modifiers.forEach((m) => robot.keyToggle(m, "up"));
@@ -21,27 +22,27 @@ function simulateHotkey({ modifiers, key }: Hotkey) {
 export const SOUND_EFFECTS: SoundEffect[] = [
   {
     command: "!dontredeem",
-    hotkey: { modifiers: ["alt"], key: "f1" },
+    hotkey: { modifiers: ["control", "alt"], key: "1" },
     description: "Don't redeem that!",
   },
   {
     command: "!sad",
-    hotkey: { modifiers: ["alt"], key: "f2" },
+    hotkey: { modifiers: ["control", "alt"], key: "2" },
     description: "Sad trombone sound",
   },
   {
     command: "!pfft",
-    hotkey: { modifiers: ["alt"], key: "f3" },
+    hotkey: { modifiers: ["control", "alt"], key: "3" },
     description: "Pfft sound",
   },
   {
     command: "!clap",
-    hotkey: { modifiers: ["alt"], key: "f4" },
+    hotkey: { modifiers: ["control", "alt"], key: "5" },
     description: "Clapping sound",
   },
   {
     command: "!scream",
-    hotkey: { modifiers: ["alt"], key: "f5" },
+    hotkey: { modifiers: ["control", "alt"], key: "4" },
     description: "Screaming sound",
   },
 ];
